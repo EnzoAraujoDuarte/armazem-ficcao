@@ -1,0 +1,117 @@
+name: Testes e deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testes:
+    name: Playwright (${{ matrix.navegador }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        navegador: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências do site
+        run: npm ci
+
+      - name: Gerar o build
+        run: npm run build
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências dos testes
+        run: uv sync --group test
+
+      - name: Instalar o navegador
+        run: uv run playwright install --with-deps ${{ matrix.navegador }}
+
+      - name: Subir o site (vite preview)
+        run: |
+          npx vite preview &
+          npx --yes wait-on http://127.0.0.1:4173/armazem-ficcao/
+
+      - name: Rodar os testes
+        run: >
+          uv run pytest -n auto
+          --browser ${{ matrix.navegador }}
+          --tracing retain-on-failure
+          --screenshot only-on-failure
+          --output test-results
+          --html relatorio/relatorio-${{ matrix.navegador }}.html --self-contained-html
+
+      - name: Publicar relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-${{ matrix.navegador }}
+          path: |
+            relatorio/
+            test-results/
+          retention-days: 14
+
+  deploy:
+    name: Publicar no GitHub Pages
+    needs: testes
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    outputs:
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+  smoke-producao:
+    name: Smoke test em produção
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --group test
+      - run: uv run playwright install --with-deps chromium
+      - name: Testes marcados como smoke contra o site publicado
+        run: uv run pytest -m smoke --base-url "${{ needs.deploy.outputs.url }}" --html relatorio/smoke-producao.html --self-contained-html
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-smoke-producao
+          path: relatorio/
