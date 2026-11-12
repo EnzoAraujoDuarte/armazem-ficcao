@@ -1,0 +1,11 @@
+{
+  "name": "gerador-relatorio",
+  "private": true,
+  "description": "Gera docs/Relatorio_Armazem_Ficcao.docx a partir dos prints e do código real dos testes.",
+  "scripts": {
+    "gerar": "PROJETO=../.. SAIDA=../Relatorio_Armazem_Ficcao.docx node gerar.js"
+  },
+  "dependencies": {
+    "docx": "^9.15.3"
+  }
+}
