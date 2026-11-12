@@ -25,10 +25,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Another tab changing the cart should not leave this one stale.
   useEffect(() => {
+    const reler = () => dispatch({ type: 'carregar', state: readJSON(STORAGE_KEYS.carrinho, EMPTY) })
     const onStorage = (event: StorageEvent) => {
-      if (event.key === STORAGE_KEYS.carrinho) dispatch({ type: 'carregar', state: readJSON(STORAGE_KEYS.carrinho, EMPTY) })
+      if (event.key === STORAGE_KEYS.carrinho) reler()
     }
     window.addEventListener('storage', onStorage)
+    // A change another tab made between this tab's first render and now fired no event here.
+    reler()
     return () => window.removeEventListener('storage', onStorage)
   }, [])
 

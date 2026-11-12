@@ -75,6 +75,7 @@ def test_sacola_sincroniza_entre_abas(loja: Loja, context):
     loja.vitrine.abrir()
     outra_aba = context.new_page()
     outra_aba.goto(loja.page.url)
+    expect(outra_aba.get_by_test_id("contador-sacola")).to_have_text("0")
 
     # Quando o cliente compra em uma aba
     loja.vitrine.comprar("Gaveta para Guardar Silêncio")

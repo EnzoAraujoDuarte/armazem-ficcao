@@ -12,6 +12,16 @@ from playwright.sync_api import Page, expect
 
 from tests.dados import USUARIO_DEMO, linha_sacola
 from tests.pages.loja import Loja
+from tests.painel_ao_vivo import (  # noqa: F401  ganchos e fixture do painel ao vivo (--painel)
+    argumentos_do_navegador,
+    painel_ao_vivo,
+    tamanho_da_tela,
+    pytest_addoption,
+    pytest_collection_finish,
+    pytest_configure,
+    pytest_runtest_logreport,
+    pytest_runtest_logstart,
+)
 
 RAIZ = Path(__file__).parent.parent
 URL_LOCAL = "http://127.0.0.1:4173/armazem-ficcao/"
@@ -61,8 +71,13 @@ def base_url(pytestconfig) -> str:
 
 
 @pytest.fixture(scope="session")
+def browser_type_launch_args(browser_type_launch_args):
+    return argumentos_do_navegador(browser_type_launch_args)
+
+
+@pytest.fixture(scope="session")
 def browser_context_args(browser_context_args):
-    return {**browser_context_args, "locale": "pt-BR", "timezone_id": "America/Sao_Paulo", "viewport": {"width": 1366, "height": 900}}
+    return {**browser_context_args, "locale": "pt-BR", "timezone_id": "America/Sao_Paulo", "viewport": tamanho_da_tela({"width": 1366, "height": 900})}
 
 
 @pytest.fixture

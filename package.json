@@ -10,7 +10,7 @@
     "lint": "oxlint",
     "typecheck": "tsc -b",
     "testes": "npm run build && uv run pytest -v --html relatorio/relatorio.html --self-contained-html",
-    "testes:visual": "npm run build && uv run pytest -v --headed --slowmo 300 --html relatorio/relatorio.html --self-contained-html",
+    "testes:visual": "npm run build && uv run pytest -v --painel --slowmo 300 --html relatorio/relatorio.html --self-contained-html",
     "testes:navegadores": "npm run build && uv run pytest -v --browser chromium --browser firefox --browser webkit --html relatorio/relatorio.html --self-contained-html"
   },
   "dependencies": {

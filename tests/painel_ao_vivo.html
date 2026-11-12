@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Testes ao vivo</title>
+    <style>
+      :root {
+        --fundo: #0f2b57;
+        --cartao: #153a74;
+        --texto: #fbf6e9;
+        --suave: #b9c7de;
+        --pendente: #4a5f84;
+        --rodando: #f7d34e;
+        --passou: #3fbf6b;
+        --falhou: #ff6b6b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font: 15px/1.4 -apple-system, 'Segoe UI', system-ui, sans-serif;
+        background: var(--fundo);
+        color: var(--texto);
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 16px 18px 14px;
+        background: var(--fundo);
+        border-bottom: 1px solid rgb(255 255 255 / 0.12);
+      }
+
+      h1 {
+        margin: 0 0 2px;
+        font-size: 19px;
+      }
+
+      .sub {
+        margin: 0 0 12px;
+        color: var(--suave);
+        font-size: 13px;
+      }
+
+      .numeros {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .numero {
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: var(--cartao);
+      }
+
+      .numero b {
+        display: block;
+        font-size: 24px;
+        line-height: 1.1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .numero span {
+        font-size: 12px;
+        color: var(--suave);
+      }
+
+      .numero.passou b {
+        color: var(--passou);
+      }
+
+      .numero.falhou b {
+        color: var(--falhou);
+      }
+
+      .barra {
+        height: 8px;
+        border-radius: 99px;
+        overflow: hidden;
+        background: var(--pendente);
+        display: flex;
+      }
+
+      .barra i {
+        display: block;
+        height: 100%;
+        transition: width 250ms ease-out;
+      }
+
+      .barra .ok {
+        background: var(--passou);
+      }
+
+      .barra .erro {
+        background: var(--falhou);
+      }
+
+      .status-geral {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      main {
+        padding: 6px 12px 40px;
+      }
+
+      section h2 {
+        margin: 16px 6px 6px;
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--suave);
+      }
+
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: grid;
+        grid-template-columns: 22px 1fr auto;
+        gap: 8px;
+        align-items: start;
+        padding: 7px 8px;
+        border-radius: 7px;
+        transition: background-color 200ms ease-out;
+      }
+
+      li .nome {
+        font-size: 14px;
+      }
+
+      li .caso {
+        display: block;
+        font-size: 12px;
+        color: var(--suave);
+      }
+
+      li .tempo {
+        font-size: 12px;
+        color: var(--suave);
+        font-variant-numeric: tabular-nums;
+      }
+
+      li .erro {
+        grid-column: 2 / -1;
+        margin: 4px 0 0;
+        padding: 6px 8px;
+        border-radius: 5px;
+        background: rgb(255 107 107 / 0.15);
+        color: #ffd1d1;
+        font: 12px/1.35 Menlo, Consolas, monospace;
+        white-space: pre-wrap;
+      }
+
+      .icone {
+        width: 18px;
+        height: 18px;
+        margin-top: 1px;
+      }
+
+      li.pendente .nome {
+        color: var(--suave);
+      }
+
+      li.rodando {
+        background: rgb(247 211 78 / 0.16);
+        outline: 2px solid var(--rodando);
+      }
+
+      li.passou {
+        background: rgb(63 191 107 / 0.12);
+      }
+
+      li.falhou {
+        background: rgb(255 107 107 / 0.14);
+      }
+
+      li.acabou-de-passar {
+        animation: brilho 900ms ease-out;
+      }
+
+      @keyframes brilho {
+        from {
+          background: rgb(63 191 107 / 0.55);
+        }
+      }
+
+      .gira {
+        animation: gira 900ms linear infinite;
+        transform-origin: 50% 50%;
+      }
+
+      @keyframes gira {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Armazém Ficção · testes ao vivo</h1>
+      <p class="sub">Playwright + pytest, um teste de cada vez</p>
+      <div class="numeros">
+        <div class="numero passou"><b id="n-passou">0</b><span>passaram</span></div>
+        <div class="numero falhou"><b id="n-falhou">0</b><span>falharam</span></div>
+        <div class="numero"><b id="n-falta">0</b><span>faltam</span></div>
+      </div>
+      <div class="barra" aria-hidden="true"><i class="ok" id="barra-ok"></i><i class="erro" id="barra-erro"></i></div>
+      <p class="status-geral" id="status-geral">Preparando…</p>
+    </header>
+    <main id="lista"></main>
+
+    <script>
+      const ICONES = {
+        pendente: '<svg class="icone" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="none" stroke="#4a5f84" stroke-width="2.5"/></svg>',
+        rodando: '<svg class="icone gira" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7" fill="none" stroke="#4a5f84" stroke-width="2.5"/><path d="M10 3a7 7 0 0 1 7 7" fill="none" stroke="#f7d34e" stroke-width="2.5" stroke-linecap="round"/></svg>',
+        passou: '<svg class="icone" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#3fbf6b"/><path d="M6 10.5l2.6 2.6L14 7.6" fill="none" stroke="#0f2b57" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        falhou: '<svg class="icone" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#ff6b6b"/><path d="M7 7l6 6M13 7l-6 6" stroke="#0f2b57" stroke-width="2.4" stroke-linecap="round"/></svg>',
+        pulou: '<svg class="icone" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#b9c7de"/><path d="M6 10h8" stroke="#0f2b57" stroke-width="2.4" stroke-linecap="round"/></svg>',
+      }
+
+      const escapar = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+      let montado = false
+      const ultimoStatus = new Map()
+
+      function montar(estado) {
+        const grupos = new Map()
+        for (const t of estado.testes) {
+          if (!grupos.has(t.grupo)) grupos.set(t.grupo, [])
+          grupos.get(t.grupo).push(t)
+        }
+        document.getElementById('lista').innerHTML = [...grupos]
+          .map(
+            ([grupo, testes]) => `<section><h2>${escapar(grupo)}</h2><ol>${testes
+              .map((t) => `<li id="t-${t.indice}" class="pendente">${ICONES.pendente}<span><span class="nome">${escapar(t.nome)}</span>${t.caso ? `<span class="caso">${escapar(t.caso)}</span>` : ''}</span><span class="tempo"></span></li>`)
+              .join('')}</ol></section>`,
+          )
+          .join('')
+        montado = true
+      }
+
+      window.atualizar = (estado) => {
+        if (!montado) montar(estado)
+        let passou = 0
+        let falhou = 0
+        for (const t of estado.testes) {
+          if (t.status === 'passou') passou++
+          if (t.status === 'falhou') falhou++
+          if (ultimoStatus.get(t.indice) === t.status) continue
+          const li = document.getElementById(`t-${t.indice}`)
+          li.className = t.status + (t.status === 'passou' ? ' acabou-de-passar' : '')
+          li.firstElementChild.outerHTML = ICONES[t.status] || ICONES.pendente
+          li.querySelector('.tempo').textContent = t.duracao ? `${t.duracao.toFixed(1)} s` : ''
+          li.querySelector('.erro')?.remove()
+          if (t.erro) li.insertAdjacentHTML('beforeend', `<pre class="erro">${escapar(t.erro)}</pre>`)
+          ultimoStatus.set(t.indice, t.status)
+          if (t.status === 'rodando') li.scrollIntoView({ block: 'center', behavior: 'smooth' })
+        }
+        const total = estado.testes.length
+        document.getElementById('n-passou').textContent = passou
+        document.getElementById('n-falhou').textContent = falhou
+        document.getElementById('n-falta').textContent = total - passou - falhou
+        document.getElementById('barra-ok').style.width = `${(passou / total) * 100}%`
+        document.getElementById('barra-erro').style.width = `${(falhou / total) * 100}%`
+        const atual = estado.testes.find((t) => t.status === 'rodando')
+        document.getElementById('status-geral').textContent = estado.fim
+          ? falhou
+            ? `Terminou: ${passou} de ${total} passaram, ${falhou} falharam.`
+            : `Terminou: todos os ${total} testes passaram.`
+          : atual
+            ? `Rodando ${passou + falhou + 1} de ${total}: ${atual.nome}`
+            : `${total} testes na fila`
+      }
+
+      async function buscar() {
+        try {
+          const resposta = await fetch('estado.json', { cache: 'no-store' })
+          const estado = await resposta.json()
+          window.atualizar(estado)
+          if (estado.fim) return
+        } catch {
+          // O pytest terminou e o servidor saiu: a tela fica com o último resultado.
+          return
+        }
+        setTimeout(buscar, 300)
+      }
+      buscar()
+    </script>
+  </body>
+</html>

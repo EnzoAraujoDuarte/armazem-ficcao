@@ -50,8 +50,10 @@ Depois, um comando roda a suíte inteira, **um teste de cada vez**, mostrando o 
 | Comando | O que faz | Tempo aproximado |
 | --- | --- | --- |
 | `npm run testes` | Todos os testes no Chromium, sem abrir janela | 30 s |
-| `npm run testes:visual` | Todos os testes com o navegador aberto e em câmera lenta, para assistir | 4 min |
+| `npm run testes:visual` | Todos os testes em câmera lenta, com um **painel ao vivo** à esquerda (cada teste fica verde quando passa) e o navegador à direita | 4 min |
 | `npm run testes:navegadores` | Todos os testes no Chromium, Firefox e WebKit, um depois do outro | 2 min |
+
+No modo visual, o painel e o navegador foram dimensionados para uma tela de 1470 × 956 pontos (MacBook Air); a loja abre em 1000 × 760 px. No fim, o painel continua aberto até você apertar Enter no terminal.
 
 Dá para rodar só um arquivo passando o caminho depois de `--`:
 
