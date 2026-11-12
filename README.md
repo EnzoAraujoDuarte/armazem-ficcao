@@ -40,13 +40,26 @@ Abre em http://localhost:5173/armazem-ficcao/.
 Pré-requisito: [uv](https://docs.astral.sh/uv/) (gerenciador de Python).
 
 ```bash
+npm install
 uv sync --group test
-uv run playwright install chromium
-npm run build
-uv run pytest -v
+uv run playwright install
 ```
 
-Sem `--base-url`, os testes sobem sozinhos o build local (`vite preview`). Outras formas úteis:
+Depois, um comando roda a suíte inteira, **um teste de cada vez**, mostrando o nome de cada teste e se passou, como num log de CI. Cada comando gera o site, sobe o servidor sozinho e no fim salva o relatório em `relatorio/relatorio.html`.
+
+| Comando | O que faz | Tempo aproximado |
+| --- | --- | --- |
+| `npm run testes` | Todos os testes no Chromium, sem abrir janela | 30 s |
+| `npm run testes:visual` | Todos os testes com o navegador aberto e em câmera lenta, para assistir | 4 min |
+| `npm run testes:navegadores` | Todos os testes no Chromium, Firefox e WebKit, um depois do outro | 2 min |
+
+Dá para rodar só um arquivo passando o caminho depois de `--`:
+
+```bash
+npm run testes:visual -- tests/test_frete_gratis.py
+```
+
+Outras formas úteis, direto com o pytest:
 
 ```bash
 # Mostrar um teste rodando no navegador, devagar (bom para apresentar)

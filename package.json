@@ -8,7 +8,10 @@
     "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview",
     "lint": "oxlint",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "testes": "npm run build && uv run pytest -v --html relatorio/relatorio.html --self-contained-html",
+    "testes:visual": "npm run build && uv run pytest -v --headed --slowmo 300 --html relatorio/relatorio.html --self-contained-html",
+    "testes:navegadores": "npm run build && uv run pytest -v --browser chromium --browser firefox --browser webkit --html relatorio/relatorio.html --self-contained-html"
   },
   "dependencies": {
     "@fontsource/alegreya": "^5.3.0",
