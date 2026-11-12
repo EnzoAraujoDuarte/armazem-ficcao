@@ -1,0 +1,160 @@
+{
+  "categorias": [
+    { "slug": "casa-improvavel", "nome": "Casa Improvável" },
+    { "slug": "tempo-e-clima", "nome": "Tempo & Clima" },
+    { "slug": "escritorio-inutil", "nome": "Escritório Inútil" },
+    { "slug": "cozinha-teorica", "nome": "Cozinha Teórica" },
+    { "slug": "bolso-e-viagem", "nome": "Bolso & Viagem" }
+  ],
+  "produtos": [
+    {
+      "id": 1, "slug": "guarda-chuva-de-chuva-interna", "nome": "Guarda-chuva de Chuva Interna",
+      "categoria": "tempo-e-clima", "preco": 89.9, "estoque": 12, "ilustracao": "guarda-chuva",
+      "resumo": "Para os dias em que o tempo fecha só dentro de você.",
+      "descricao": "Abre em ambientes fechados sem dar azar. Tecido impermeável a desânimo leve e moderado. Não protege de chuva de verdade, e isso está escrito em letra grande.",
+      "procedencia": { "inventor": "Dona Zuleide Ventura", "ano": 1987, "cidade": "Baixo Guandu (ES)" },
+      "opcoes": { "nome": "Tamanho", "valores": [ { "rotulo": "Individual", "acrescimo": 0 }, { "rotulo": "Família", "acrescimo": 40 } ] },
+      "destaque": true
+    },
+    {
+      "id": 2, "slug": "relogio-que-atrasa-de-proposito", "nome": "Relógio que Atrasa de Propósito",
+      "categoria": "tempo-e-clima", "preco": 149, "estoque": 5, "ilustracao": "relogio",
+      "resumo": "Atrasa dez minutos por dia para você nunca chegar adiantado.",
+      "descricao": "Mecanismo de corda com atraso calibrado em fábrica. Acompanha certificado de impontualidade assinado pelo relojoeiro.",
+      "procedencia": { "inventor": "Seu Anísio Pontual", "ano": 1962, "cidade": "Colatina (ES)" },
+      "destaque": true
+    },
+    {
+      "id": 3, "slug": "caneca-de-esfriar-na-hora-certa", "nome": "Caneca de Esfriar na Hora Certa",
+      "categoria": "cozinha-teorica", "preco": 59.9, "estoque": 30, "ilustracao": "caneca",
+      "resumo": "O café esfria exatamente quando você lembra dele.",
+      "descricao": "Cerâmica de esquecimento controlado. Funciona melhor em reuniões longas. Lavar à mão, com carinho.",
+      "procedencia": { "inventor": "Ateliê Borra Fina", "ano": 2003, "cidade": "Linhares (ES)" },
+      "opcoes": { "nome": "Cor", "valores": [ { "rotulo": "Barro", "acrescimo": 0 }, { "rotulo": "Anil", "acrescimo": 0 }, { "rotulo": "Esmaltada", "acrescimo": 12 } ] },
+      "destaque": true
+    },
+    {
+      "id": 4, "slug": "gaveta-para-guardar-silencio", "nome": "Gaveta para Guardar Silêncio",
+      "categoria": "casa-improvavel", "preco": 219, "estoque": 3, "ilustracao": "gaveta",
+      "resumo": "Guarde o silêncio da madrugada para usar na segunda-feira.",
+      "descricao": "Madeira maciça com vedação acústica de três camadas. Capacidade: duas noites de interior ou meia tarde de biblioteca.",
+      "procedencia": { "inventor": "Marcenaria Psiu", "ano": 1979, "cidade": "Santa Teresa (ES)" },
+      "destaque": true
+    },
+    {
+      "id": 5, "slug": "chave-de-portas-que-nao-existem", "nome": "Chave de Portas que Não Existem",
+      "categoria": "bolso-e-viagem", "preco": 34.9, "estoque": 50, "ilustracao": "chave",
+      "resumo": "Abre qualquer porta que ainda não foi construída.",
+      "descricao": "Latão envelhecido, dentes cortados ao acaso. Garantia vitalícia enquanto a porta não existir.",
+      "procedencia": { "inventor": "Chaveiro Sem Endereço", "ano": 1995, "cidade": "Vitória (ES)" }
+    },
+    {
+      "id": 6, "slug": "lampada-de-ideias-ja-tidas", "nome": "Lâmpada de Ideias Já Tidas",
+      "categoria": "escritorio-inutil", "preco": 74.5, "estoque": 0, "ilustracao": "lampada",
+      "resumo": "Acende sempre que alguém já pensou nisso antes.",
+      "descricao": "Filamento sensível a originalidade. Fica acesa praticamente o tempo todo. Esgotada desde que todo mundo teve a mesma ideia.",
+      "procedencia": { "inventor": "Laboratório Déjà Vu", "ano": 2011, "cidade": "Serra (ES)" }
+    },
+    {
+      "id": 7, "slug": "mapa-de-lugares-esquecidos", "nome": "Mapa de Lugares Esquecidos",
+      "categoria": "bolso-e-viagem", "preco": 42, "estoque": 8, "ilustracao": "mapa",
+      "resumo": "Mostra onde você deixou o guarda-chuva em 2014.",
+      "descricao": "Papel de algodão dobrável em oito partes, nunca na ordem certa. Escala 1:lembrança.",
+      "procedencia": { "inventor": "Cartografia do Tanto Faz", "ano": 1990, "cidade": "Aracruz (ES)" }
+    },
+    {
+      "id": 8, "slug": "regua-de-medir-paciencia", "nome": "Régua de Medir Paciência",
+      "categoria": "escritorio-inutil", "preco": 19.9, "estoque": 100, "ilustracao": "regua",
+      "resumo": "Graduada em minutos de fila de banco.",
+      "descricao": "Trinta centímetros de paciência, ou quinze se for segunda-feira. Acrílico resistente a bufadas.",
+      "procedencia": { "inventor": "Papelaria Respira Fundo", "ano": 1984, "cidade": "Cachoeiro de Itapemirim (ES)" }
+    },
+    {
+      "id": 9, "slug": "cadeira-de-esperar-sentado", "nome": "Cadeira de Esperar Sentado",
+      "categoria": "casa-improvavel", "preco": 389, "estoque": 2, "ilustracao": "cadeira",
+      "resumo": "Para quem foi avisado de que ia esperar sentado.",
+      "descricao": "Encosto ergonômico para esperas de seis meses ou mais. Acompanha almofada de resignação.",
+      "procedencia": { "inventor": "Móveis Já Já", "ano": 1973, "cidade": "Domingos Martins (ES)" },
+      "destaque": true
+    },
+    {
+      "id": 10, "slug": "pote-de-vento-encanado", "nome": "Pote de Vento Encanado",
+      "categoria": "tempo-e-clima", "preco": 27.5, "estoque": 40, "ilustracao": "pote",
+      "resumo": "Vento colhido no corredor de uma casa antiga.",
+      "descricao": "Tampa de rosca com trava dupla. Abrir longe de papéis importantes e de quem tem medo de resfriado.",
+      "procedencia": { "inventor": "Sítio Corrente de Ar", "ano": 2008, "cidade": "Venda Nova do Imigrante (ES)" },
+      "opcoes": { "nome": "Intensidade", "valores": [ { "rotulo": "Brisa", "acrescimo": 0 }, { "rotulo": "Ventania", "acrescimo": 15 } ] }
+    },
+    {
+      "id": 11, "slug": "bule-de-cha-de-cadeira", "nome": "Bule de Chá de Cadeira",
+      "categoria": "cozinha-teorica", "preco": 120, "estoque": 6, "ilustracao": "bule",
+      "resumo": "Serve o chá que você toma esperando ser chamado.",
+      "descricao": "Esmalte azul, alça que esquenta só quando chamam seu nome. Rende seis xícaras de espera.",
+      "procedencia": { "inventor": "Louças Fila Única", "ano": 1958, "cidade": "Guarapari (ES)" }
+    },
+    {
+      "id": 12, "slug": "borracha-de-arrependimentos-leves", "nome": "Borracha de Arrependimentos Leves",
+      "categoria": "escritorio-inutil", "preco": 12.9, "estoque": 25, "ilustracao": "borracha",
+      "resumo": "Apaga mensagens mandadas depois das 23h.",
+      "descricao": "Não funciona em arrependimentos graves, tatuagens ou e-mails com o chefe em cópia.",
+      "procedencia": { "inventor": "Papelaria Respira Fundo", "ano": 1999, "cidade": "Cachoeiro de Itapemirim (ES)" }
+    },
+    {
+      "id": 13, "slug": "sino-de-avisar-que-ja-sabia", "nome": "Sino de Avisar que Já Sabia",
+      "categoria": "casa-improvavel", "preco": 64, "estoque": 9, "ilustracao": "sino",
+      "resumo": "Toca sozinho logo depois que dá errado.",
+      "descricao": "Bronze fundido com sensor de \"eu te disse\". Volume ajustável de discreto a sogra.",
+      "procedencia": { "inventor": "Fundição Bem Que Avisei", "ano": 1966, "cidade": "Itapemirim (ES)" }
+    },
+    {
+      "id": 14, "slug": "bussola-que-aponta-pra-geladeira", "nome": "Bússola que Aponta pra Geladeira",
+      "categoria": "bolso-e-viagem", "preco": 99.9, "estoque": 15, "ilustracao": "bussola",
+      "resumo": "O norte verdadeiro de qualquer madrugada.",
+      "descricao": "Agulha imantada calibrada por fome. Em viagens, aponta para a padaria mais próxima.",
+      "procedencia": { "inventor": "Instrumentos Beliscão", "ano": 1981, "cidade": "Nova Venécia (ES)" },
+      "destaque": true
+    },
+    {
+      "id": 15, "slug": "termometro-de-climao", "nome": "Termômetro de Climão",
+      "categoria": "tempo-e-clima", "preco": 54.9, "estoque": 7, "ilustracao": "termometro",
+      "resumo": "Mede a temperatura da sala depois de uma pergunta errada.",
+      "descricao": "Escala de \"tudo bem\" a \"almoço de família\". Não substitui um bom silêncio.",
+      "procedencia": { "inventor": "Laboratório Déjà Vu", "ano": 2016, "cidade": "Serra (ES)" }
+    },
+    {
+      "id": 16, "slug": "tesoura-de-cortar-assunto", "nome": "Tesoura de Cortar Assunto",
+      "categoria": "escritorio-inutil", "preco": 38, "estoque": 18, "ilustracao": "tesoura",
+      "resumo": "Corta conversa sobre política em churrasco.",
+      "descricao": "Lâminas de aço inox afiadas para encerrar assuntos com educação. Uso adulto.",
+      "procedencia": { "inventor": "Cutelaria Mudando de Assunto", "ano": 1977, "cidade": "Castelo (ES)" }
+    },
+    {
+      "id": 17, "slug": "escada-para-subir-o-nivel", "nome": "Escada para Subir o Nível",
+      "categoria": "casa-improvavel", "preco": 275, "estoque": 4, "ilustracao": "escada",
+      "resumo": "Para quando a discussão desce demais.",
+      "descricao": "Cinco degraus de madeira de lei. Suporta argumentos de até 120 kg.",
+      "procedencia": { "inventor": "Móveis Já Já", "ano": 1988, "cidade": "Domingos Martins (ES)" }
+    },
+    {
+      "id": 18, "slug": "peixe-para-aquario-imaginario", "nome": "Peixe para Aquário Imaginário",
+      "categoria": "casa-improvavel", "preco": 9.9, "estoque": 99, "ilustracao": "peixe",
+      "resumo": "Não come, não nada, não morre.",
+      "descricao": "Entregue em saquinho com água imaginária. Aquário vendido separadamente, também imaginário.",
+      "procedencia": { "inventor": "Viveiro Faz de Conta", "ano": 2020, "cidade": "Conceição da Barra (ES)" }
+    },
+    {
+      "id": 19, "slug": "sal-para-conversa-sem-graca", "nome": "Sal para Conversa sem Graça",
+      "categoria": "cozinha-teorica", "preco": 15.5, "estoque": 60, "ilustracao": "saleiro",
+      "resumo": "Uma pitada e o elevador fica menos constrangedor.",
+      "descricao": "Sal grosso de piada pronta. Não usar em velório, entrevista de emprego ou reunião de condomínio.",
+      "procedencia": { "inventor": "Salina Quebra-Gelo", "ano": 1993, "cidade": "São Mateus (ES)" }
+    },
+    {
+      "id": 20, "slug": "vela-de-apagao-programado", "nome": "Vela de Apagão Programado",
+      "categoria": "cozinha-teorica", "preco": 22.9, "estoque": 0, "ilustracao": "vela",
+      "resumo": "Acende sozinha cinco minutos antes de faltar luz.",
+      "descricao": "Cera de abelha com pavio meteorológico. Esgotada: a última faltou luz antes da entrega.",
+      "procedencia": { "inventor": "Cerieiro Previdente", "ano": 1970, "cidade": "Muqui (ES)" }
+    }
+  ]
+}
