@@ -7,6 +7,7 @@ Trabalho da disciplina **Qualidade e Teste de Software** (Sistemas de Informaç�
 - **Site em produção:** https://enzoaraujoduarte.github.io/armazem-ficcao/
 - **Ferramenta de teste:** [Playwright para Python](https://playwright.dev/python/) com pytest
 - **Aplicação:** React 19 + TypeScript + Vite + React Router
+- **Relatório do trabalho (Word):** [docs/Relatorio_Armazem_Ficcao.docx](docs/Relatorio_Armazem_Ficcao.docx)
 
 > Nada aqui é real: nenhum produto existe, nada é cobrado e nada é entregue. Tudo o que a loja guarda (sacola, conta, pedidos) fica só no navegador de quem usa.
 
