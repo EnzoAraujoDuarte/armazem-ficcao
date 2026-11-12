@@ -130,7 +130,7 @@ export function Totals() {
 }
 
 function ShippingForm() {
-  const { cotacao, setCotacao } = useCart()
+  const { cotacao, setCotacao, totais } = useCart()
   const [cep, setCep] = useState(cotacao?.cep ?? '')
   const [erro, setErro] = useState<string | null>(null)
 
@@ -173,7 +173,9 @@ function ShippingForm() {
       )}
       {cotacao && !erro && (
         <p className="mini-form-ok" id="cep-sacola-resultado" data-testid="cotacao-frete">
-          {cotacao.regiao}: {formatBRL(cotacao.valor)}, entrega em {cotacao.prazoDias} dias úteis.
+          {totais.freteGratis
+            ? `${cotacao.regiao}: grátis neste pedido (seria ${formatBRL(cotacao.valor)}), entrega em ${cotacao.prazoDias} dias úteis.`
+            : `${cotacao.regiao}: ${formatBRL(cotacao.valor)}, entrega em ${cotacao.prazoDias} dias úteis.`}
         </p>
       )}
     </form>

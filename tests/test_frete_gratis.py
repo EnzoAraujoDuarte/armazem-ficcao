@@ -86,6 +86,7 @@ def test_aumentar_a_quantidade_libera_o_frete_gratis(loja: Loja, com_sacola):
     expect(loja.sacola.subtotal).to_have_text("R$ 300,00")
     expect(loja.sacola.frete).to_have_text("Grátis")
     expect(loja.sacola.frete_gratis_garantido).to_be_visible()
+    expect(loja.sacola.cotacao).to_have_text("Espírito Santo: grátis neste pedido (seria R$ 12,90), entrega em 2 dias úteis.")
 
 
 def test_regra_do_frete_gratis_aparece_na_vitrine(loja: Loja):

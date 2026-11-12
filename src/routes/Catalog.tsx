@@ -1,8 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { ChevronDown } from 'lucide-react'
 import { useSearchParams } from 'react-router'
 import { CatalogGate } from '../components/CatalogGate'
 import { Varal } from '../components/Varal'
-import { filterProducts, paginate, type Catalog as CatalogData, type CatalogQuery, type Product, type SortOrder } from '../domain/catalog'
+import {
+  filterProducts,
+  paginate,
+  type Catalog as CatalogData,
+  type CatalogQuery,
+  type Product,
+  type SortOrder,
+} from '../domain/catalog'
 
 const SORT_LABELS: Record<SortOrder, string> = {
   relevancia: 'Mais relevantes',
@@ -22,16 +30,31 @@ function readQuery(params: URLSearchParams): CatalogQuery {
   }
 }
 
+const MOBILE = '(max-width: 640px)'
+
+/** On a phone the filters start folded, so the first folheto is in the first screen. */
+function useIsMobile() {
+  const [mobile, setMobile] = useState(() => window.matchMedia(MOBILE).matches)
+  useEffect(() => {
+    const consulta = window.matchMedia(MOBILE)
+    const mudar = () => setMobile(consulta.matches)
+    consulta.addEventListener('change', mudar)
+    return () => consulta.removeEventListener('change', mudar)
+  }, [])
+  return mobile
+}
+
 /** How many folhetos fit on one string at the current width. */
 function useColumns() {
   const ref = useRef<HTMLDivElement>(null)
   const [colunas, setColunas] = useState(3)
-  useEffect(() => {
+  // Layout effect: measure before the first paint, so a phone never flashes three columns.
+  useLayoutEffect(() => {
     const el = ref.current
     if (!el) return
-    const observer = new ResizeObserver(([entrada]) => {
-      setColunas(Math.max(1, Math.min(4, Math.floor(entrada.contentRect.width / 230))))
-    })
+    const medir = (largura: number) => setColunas(Math.max(1, Math.min(4, Math.floor(largura / 230))))
+    medir(el.clientWidth)
+    const observer = new ResizeObserver(([entrada]) => medir(entrada.contentRect.width))
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
@@ -58,6 +81,7 @@ function CatalogBody({ catalogo }: { catalogo: CatalogData }) {
   const query = readQuery(params)
   const [busca, setBusca] = useState(query.busca)
   const { ref, colunas } = useColumns()
+  const mobile = useIsMobile()
 
   const filtrados = filterProducts(catalogo.produtos, query)
   const pagina = paginate<Product>(filtrados, query.pagina)
@@ -78,66 +102,91 @@ function CatalogBody({ catalogo }: { catalogo: CatalogData }) {
   return (
     <div className="catalogo-corpo">
       <aside className="tabuleta" aria-label="Filtros">
-        <form
-          role="search"
-          onSubmit={(e) => {
-            e.preventDefault()
-            atualizar({ busca: busca.trim() })
-          }}
-        >
-          <label htmlFor="busca" className="tabuleta-rotulo">
-            Buscar folheto
-          </label>
-          <div className="busca">
-            <input
-              id="busca"
-              type="search"
-              value={busca}
-              onChange={(e) => setBusca(e.target.value)}
-              placeholder="ex.: chuva, café, silêncio"
-            />
-            <button type="submit" className="botao botao--tinta">
-              Buscar
-            </button>
-          </div>
-        </form>
+        <details className="tabuleta-dobra" open={!mobile} key={String(mobile)}>
+          <summary>
+            Filtrar e ordenar
+            <ChevronDown aria-hidden="true" size={22} strokeWidth={2.6} className="tabuleta-seta" />
+          </summary>
+          <div className="tabuleta-campos">
+            <form
+              role="search"
+              onSubmit={(e) => {
+                e.preventDefault()
+                atualizar({ busca: busca.trim() })
+              }}
+            >
+              <label htmlFor="busca" className="tabuleta-rotulo">
+                Buscar folheto
+              </label>
+              <div className="busca">
+                <input
+                  id="busca"
+                  type="search"
+                  value={busca}
+                  onChange={(e) => setBusca(e.target.value)}
+                  placeholder="ex.: chuva, café, silêncio"
+                />
+                <button type="submit" className="botao botao--tinta">
+                  Buscar
+                </button>
+              </div>
+            </form>
 
-        <fieldset className="tabuleta-grupo">
-          <legend className="tabuleta-rotulo">Categoria</legend>
-          <label className="opcao-radio">
-            <input type="radio" name="categoria" checked={!query.categoria} onChange={() => atualizar({ categoria: null })} />
-            Todas
-          </label>
-          {catalogo.categorias.map((categoria) => (
-            <label className="opcao-radio" key={categoria.slug}>
+            <fieldset className="tabuleta-grupo">
+              <legend className="tabuleta-rotulo">Categoria</legend>
+              <label className="opcao-radio">
+                <input
+                  type="radio"
+                  name="categoria"
+                  checked={!query.categoria}
+                  onChange={() => atualizar({ categoria: null })}
+                />
+                Todas
+              </label>
+              {catalogo.categorias.map((categoria) => (
+                <label className="opcao-radio" key={categoria.slug}>
+                  <input
+                    type="radio"
+                    name="categoria"
+                    checked={query.categoria === categoria.slug}
+                    onChange={() => atualizar({ categoria: categoria.slug })}
+                  />
+                  {categoria.nome}
+                </label>
+              ))}
+            </fieldset>
+
+            <div className="tabuleta-grupo">
+              <label htmlFor="ordem" className="tabuleta-rotulo">
+                Ordenar por
+              </label>
+              <select
+                id="ordem"
+                value={query.ordem}
+                onChange={(e) =>
+                  atualizar({
+                    ordem: e.target.value === 'relevancia' ? null : e.target.value,
+                  })
+                }
+              >
+                {Object.entries(SORT_LABELS).map(([valor, rotulo]) => (
+                  <option key={valor} value={valor}>
+                    {rotulo}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <label className="opcao-check">
               <input
-                type="radio"
-                name="categoria"
-                checked={query.categoria === categoria.slug}
-                onChange={() => atualizar({ categoria: categoria.slug })}
+                type="checkbox"
+                checked={query.soDisponiveis}
+                onChange={(e) => atualizar({ disponiveis: e.target.checked ? '1' : null })}
               />
-              {categoria.nome}
+              Só o que tem em estoque
             </label>
-          ))}
-        </fieldset>
-
-        <div className="tabuleta-grupo">
-          <label htmlFor="ordem" className="tabuleta-rotulo">
-            Ordenar por
-          </label>
-          <select id="ordem" value={query.ordem} onChange={(e) => atualizar({ ordem: e.target.value === 'relevancia' ? null : e.target.value })}>
-            {Object.entries(SORT_LABELS).map(([valor, rotulo]) => (
-              <option key={valor} value={valor}>
-                {rotulo}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <label className="opcao-check">
-          <input type="checkbox" checked={query.soDisponiveis} onChange={(e) => atualizar({ disponiveis: e.target.checked ? '1' : null })} />
-          Só o que tem em estoque
-        </label>
+          </div>
+        </details>
       </aside>
 
       <section className="catalogo-resultados" aria-labelledby="contagem" ref={ref}>
