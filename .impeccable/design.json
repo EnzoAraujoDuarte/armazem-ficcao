@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T20:38:33+00:00",
+  "title": "Design System: Armazém Ficção",
+  "extensions": {
+    "colorMeta": {
+      "lona": {
+        "role": "primary",
+        "displayName": "Stall-Tarp Cobalt",
+        "canonical": "oklch(43.9% 0.133 259)",
+        "tonalRamp": [
+          "oklch(15% 0.115 259)",
+          "oklch(26% 0.130 259)",
+          "oklch(38% 0.133 259)",
+          "oklch(49% 0.133 259)",
+          "oklch(61% 0.131 259)",
+          "oklch(72% 0.116 259)",
+          "oklch(84% 0.100 259)",
+          "oklch(95% 0.085 259)"
+        ]
+      },
+      "lona-escura": {
+        "role": "primary",
+        "displayName": "Dusk Tarp",
+        "canonical": "oklch(35.7% 0.108 259)",
+        "tonalRamp": [
+          "oklch(15% 0.106 259)",
+          "oklch(26% 0.108 259)",
+          "oklch(38% 0.108 259)",
+          "oklch(49% 0.108 259)",
+          "oklch(61% 0.101 259)",
+          "oklch(72% 0.089 259)",
+          "oklch(84% 0.077 259)",
+          "oklch(95% 0.064 259)"
+        ]
+      },
+      "lona-funda": {
+        "role": "primary",
+        "displayName": "Night Tarp",
+        "canonical": "oklch(29.5% 0.087 259)",
+        "tonalRamp": [
+          "oklch(15% 0.087 259)",
+          "oklch(26% 0.087 259)",
+          "oklch(38% 0.087 259)",
+          "oklch(49% 0.087 259)",
+          "oklch(61% 0.080 259)",
+          "oklch(72% 0.070 259)",
+          "oklch(84% 0.060 259)",
+          "oklch(95% 0.050 259)"
+        ]
+      },
+      "tinta": {
+        "role": "primary",
+        "displayName": "Printer's Ink",
+        "canonical": "oklch(19.0% 0.010 67)",
+        "tonalRamp": [
+          "oklch(15% 0.010 67)",
+          "oklch(26% 0.010 67)",
+          "oklch(38% 0.010 67)",
+          "oklch(49% 0.010 67)",
+          "oklch(61% 0.010 67)",
+          "oklch(72% 0.010 67)",
+          "oklch(84% 0.010 67)",
+          "oklch(95% 0.010 67)"
+        ]
+      },
+      "amarelo": {
+        "role": "secondary",
+        "displayName": "Folheto Yellow",
+        "canonical": "oklch(87.4% 0.152 94)",
+        "tonalRamp": [
+          "oklch(15% 0.062 94)",
+          "oklch(26% 0.079 94)",
+          "oklch(38% 0.097 94)",
+          "oklch(49% 0.114 94)",
+          "oklch(61% 0.131 94)",
+          "oklch(72% 0.149 94)",
+          "oklch(84% 0.152 94)",
+          "oklch(95% 0.152 94)"
+        ]
+      },
+      "rosa": {
+        "role": "secondary",
+        "displayName": "Folheto Pink",
+        "canonical": "oklch(79.7% 0.105 357)",
+        "tonalRamp": [
+          "oklch(15% 0.057 357)",
+          "oklch(26% 0.069 357)",
+          "oklch(38% 0.081 357)",
+          "oklch(49% 0.093 357)",
+          "oklch(61% 0.105 357)",
+          "oklch(72% 0.105 357)",
+          "oklch(84% 0.105 357)",
+          "oklch(95% 0.105 357)"
+        ]
+      },
+      "verde": {
+        "role": "secondary",
+        "displayName": "Folheto Green",
+        "canonical": "oklch(84.2% 0.078 155)",
+        "tonalRamp": [
+          "oklch(15% 0.044 155)",
+          "oklch(26% 0.053 155)",
+          "oklch(38% 0.062 155)",
+          "oklch(49% 0.071 155)",
+          "oklch(61% 0.078 155)",
+          "oklch(72% 0.078 155)",
+          "oklch(84% 0.078 155)",
+          "oklch(95% 0.078 155)"
+        ]
+      },
+      "celeste": {
+        "role": "secondary",
+        "displayName": "Folheto Sky",
+        "canonical": "oklch(86.3% 0.052 236)",
+        "tonalRamp": [
+          "oklch(15% 0.035 236)",
+          "oklch(26% 0.041 236)",
+          "oklch(38% 0.047 236)",
+          "oklch(49% 0.052 236)",
+          "oklch(61% 0.052 236)",
+          "oklch(72% 0.052 236)",
+          "oklch(84% 0.052 236)",
+          "oklch(95% 0.052 236)"
+        ]
+      },
+      "laranja": {
+        "role": "secondary",
+        "displayName": "Folheto Orange",
+        "canonical": "oklch(79.7% 0.125 61)",
+        "tonalRamp": [
+          "oklch(15% 0.064 61)",
+          "oklch(26% 0.078 61)",
+          "oklch(38% 0.093 61)",
+          "oklch(49% 0.107 61)",
+          "oklch(61% 0.121 61)",
+          "oklch(72% 0.125 61)",
+          "oklch(84% 0.125 61)",
+          "oklch(95% 0.125 61)"
+        ]
+      },
+      "carimbo": {
+        "role": "tertiary",
+        "displayName": "Stamp Red",
+        "canonical": "oklch(42.6% 0.150 28)",
+        "tonalRamp": [
+          "oklch(15% 0.129 28)",
+          "oklch(26% 0.146 28)",
+          "oklch(38% 0.150 28)",
+          "oklch(49% 0.150 28)",
+          "oklch(61% 0.143 28)",
+          "oklch(72% 0.126 28)",
+          "oklch(84% 0.109 28)",
+          "oklch(95% 0.092 28)"
+        ]
+      },
+      "barbante": {
+        "role": "tertiary",
+        "displayName": "Straw String",
+        "canonical": "oklch(78.9% 0.086 79)",
+        "tonalRamp": [
+          "oklch(15% 0.051 79)",
+          "oklch(26% 0.061 79)",
+          "oklch(38% 0.071 79)",
+          "oklch(49% 0.081 79)",
+          "oklch(61% 0.086 79)",
+          "oklch(72% 0.086 79)",
+          "oklch(84% 0.086 79)",
+          "oklch(95% 0.086 79)"
+        ]
+      },
+      "barbante-escuro": {
+        "role": "tertiary",
+        "displayName": "Dark String",
+        "canonical": "oklch(60.1% 0.082 77)",
+        "tonalRamp": [
+          "oklch(15% 0.065 77)",
+          "oklch(26% 0.075 77)",
+          "oklch(38% 0.082 77)",
+          "oklch(49% 0.082 77)",
+          "oklch(61% 0.082 77)",
+          "oklch(72% 0.082 77)",
+          "oklch(84% 0.082 77)",
+          "oklch(95% 0.074 77)"
+        ]
+      },
+      "madeira": {
+        "role": "tertiary",
+        "displayName": "Peg Wood",
+        "canonical": "oklch(67.4% 0.108 65)",
+        "tonalRamp": [
+          "oklch(15% 0.071 65)",
+          "oklch(26% 0.083 65)",
+          "oklch(38% 0.096 65)",
+          "oklch(49% 0.108 65)",
+          "oklch(61% 0.108 65)",
+          "oklch(72% 0.108 65)",
+          "oklch(84% 0.108 65)",
+          "oklch(95% 0.098 65)"
+        ]
+      },
+      "madeira-escura": {
+        "role": "tertiary",
+        "displayName": "Peg Grain",
+        "canonical": "oklch(51.1% 0.089 63)",
+        "tonalRamp": [
+          "oklch(15% 0.077 63)",
+          "oklch(26% 0.087 63)",
+          "oklch(38% 0.089 63)",
+          "oklch(49% 0.089 63)",
+          "oklch(61% 0.089 63)",
+          "oklch(72% 0.089 63)",
+          "oklch(84% 0.080 63)",
+          "oklch(95% 0.070 63)"
+        ]
+      },
+      "claro": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "oklch(97.3% 0.018 89)",
+        "tonalRamp": [
+          "oklch(15% 0.018 89)",
+          "oklch(26% 0.018 89)",
+          "oklch(38% 0.018 89)",
+          "oklch(49% 0.018 89)",
+          "oklch(61% 0.018 89)",
+          "oklch(72% 0.018 89)",
+          "oklch(84% 0.018 89)",
+          "oklch(95% 0.018 89)"
+        ]
+      },
+      "claro-suave": {
+        "role": "neutral",
+        "displayName": "Faded Sky",
+        "canonical": "oklch(91.6% 0.026 259)",
+        "tonalRamp": [
+          "oklch(15% 0.026 259)",
+          "oklch(26% 0.026 259)",
+          "oklch(38% 0.026 259)",
+          "oklch(49% 0.026 259)",
+          "oklch(61% 0.026 259)",
+          "oklch(72% 0.026 259)",
+          "oklch(84% 0.026 259)",
+          "oklch(95% 0.026 259)"
+        ]
+      },
+      "jornal": {
+        "role": "neutral",
+        "displayName": "Newsprint",
+        "canonical": "oklch(94.4% 0.017 88)",
+        "tonalRamp": [
+          "oklch(15% 0.017 88)",
+          "oklch(26% 0.017 88)",
+          "oklch(38% 0.017 88)",
+          "oklch(49% 0.017 88)",
+          "oklch(61% 0.017 88)",
+          "oklch(72% 0.017 88)",
+          "oklch(84% 0.017 88)",
+          "oklch(95% 0.017 88)"
+        ]
+      },
+      "papel-campo": {
+        "role": "neutral",
+        "displayName": "Field White",
+        "canonical": "oklch(99.4% 0.008 91)",
+        "tonalRamp": [
+          "oklch(15% 0.008 91)",
+          "oklch(26% 0.008 91)",
+          "oklch(38% 0.008 91)",
+          "oklch(49% 0.008 91)",
+          "oklch(61% 0.008 91)",
+          "oklch(72% 0.008 91)",
+          "oklch(84% 0.008 91)",
+          "oklch(95% 0.008 91)"
+        ]
+      },
+      "tinta-suave": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(32.0% 0.020 67)",
+        "tonalRamp": [
+          "oklch(15% 0.020 67)",
+          "oklch(26% 0.020 67)",
+          "oklch(38% 0.020 67)",
+          "oklch(49% 0.020 67)",
+          "oklch(61% 0.020 67)",
+          "oklch(72% 0.020 67)",
+          "oklch(84% 0.020 67)",
+          "oklch(95% 0.020 67)"
+        ]
+      },
+      "erro": {
+        "role": "neutral",
+        "displayName": "Error Red",
+        "canonical": "oklch(50.1% 0.178 29)",
+        "tonalRamp": [
+          "oklch(15% 0.136 29)",
+          "oklch(26% 0.156 29)",
+          "oklch(38% 0.176 29)",
+          "oklch(49% 0.178 29)",
+          "oklch(61% 0.178 29)",
+          "oklch(72% 0.159 29)",
+          "oklch(84% 0.139 29)",
+          "oklch(95% 0.118 29)"
+        ]
+      },
+      "ok": {
+        "role": "neutral",
+        "displayName": "Confirm Green",
+        "canonical": "oklch(46.8% 0.108 152)",
+        "tonalRamp": [
+          "oklch(15% 0.094 152)",
+          "oklch(26% 0.106 152)",
+          "oklch(38% 0.108 152)",
+          "oklch(49% 0.108 152)",
+          "oklch(61% 0.108 152)",
+          "oklch(72% 0.101 152)",
+          "oklch(84% 0.089 152)",
+          "oklch(95% 0.076 152)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (Ultra)",
+        "purpose": "Home headline only."
+      },
+      "headline": {
+        "displayName": "Headline (Ultra)",
+        "purpose": "Page, product, order and house-rules titles."
+      },
+      "title": {
+        "displayName": "Folheto Title (Ultra)",
+        "purpose": "Uppercase titles on folheto covers and cart lines."
+      },
+      "folheto": {
+        "displayName": "Folheto Text (Alegreya)",
+        "purpose": "Descriptions, house rules, order items: what the folheto itself says."
+      },
+      "folheto-italico": {
+        "displayName": "Folheto Italic (Alegreya Italic)",
+        "purpose": "Product summary, order thanks, inventor line."
+      },
+      "body": {
+        "displayName": "Interface (Alegreya Sans)",
+        "purpose": "All operational text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase form labels, legends, definition terms, table headers."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Uppercase button text."
+      },
+      "preco": {
+        "displayName": "Price",
+        "purpose": "Prices and totals in tabular figures."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sombra-papel",
+        "value": "0 14px 22px -12px rgb(5 14 30 / 0.55), 0 3px 5px -2px rgb(5 14 30 / 0.35)",
+        "purpose": "Every folheto and paper sheet resting on the tarp."
+      },
+      {
+        "name": "letreiro",
+        "value": "0 10px 24px -14px rgb(0 0 0 / 0.8)",
+        "purpose": "Sticky header over content."
+      },
+      {
+        "name": "folheto-aberto",
+        "value": "0 30px 50px -28px rgb(0 0 0 / 0.7), 0 4px 10px -4px rgb(0 0 0 / 0.4)",
+        "purpose": "The open product booklet."
+      },
+      {
+        "name": "em-voo",
+        "value": "0 30px 40px -20px rgb(0 0 0 / 0.6)",
+        "purpose": "Folheto copy in flight to the bag."
+      },
+      {
+        "name": "aviso",
+        "value": "0 18px 28px -14px rgb(0 0 0 / 0.65)",
+        "purpose": "Toast slip."
+      },
+      {
+        "name": "pregador",
+        "value": "0 3px 4px -1px rgb(0 0 0 / 0.45)",
+        "purpose": "Wooden peg; the string uses drop-shadow(0 3px 2px rgb(0 0 0 / 0.35))."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-saida",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Shared ease-out for every state transition and keyframe."
+      },
+      {
+        "name": "estado",
+        "value": "150ms",
+        "purpose": "Colour and border changes on buttons, links, tags, checkboxes."
+      },
+      {
+        "name": "pressionar",
+        "value": "120ms translateY(1px) scale(0.98)",
+        "purpose": "Button active press."
+      },
+      {
+        "name": "levar-para-sacola",
+        "value": "760ms cubic-bezier(0.5, 0, 0.3, 1)",
+        "purpose": "The one authored motion: folheto copy drops off the string and arcs into the bag."
+      },
+      {
+        "name": "sacola-pula",
+        "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Bag wobble on arrival (the only motion kept under reduced motion)."
+      },
+      {
+        "name": "balanco",
+        "value": "900ms",
+        "purpose": "Folheto swing on hover, hover-capable devices only."
+      },
+      {
+        "name": "contador-entra",
+        "value": "360ms",
+        "purpose": "Bag counter drops in on change."
+      },
+      {
+        "name": "aviso-cai",
+        "value": "380ms",
+        "purpose": "Toast slip drops in."
+      },
+      {
+        "name": "carimbar",
+        "value": "520ms, 150ms delay",
+        "purpose": "Order stamp lands."
+      },
+      {
+        "name": "view-transition",
+        "value": "260ms",
+        "purpose": "Woodcut morph between list and product page."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "telefone",
+        "value": "640px"
+      },
+      {
+        "name": "banca-empilha",
+        "value": "760px"
+      },
+      {
+        "name": "coluna-unica",
+        "value": "960px"
+      },
+      {
+        "name": "varal-rolavel",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Tinta)",
+      "kind": "button",
+      "refersTo": "button-tinta",
+      "description": "Ink block with cream capitals; the store's one primary action (Comprar, Adicionar à sacola, Finalizar).",
+      "html": "<div class=\"ds-papel\"><button class=\"ds-botao ds-botao--tinta\">Comprar</button></div>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-botao{display:inline-flex;align-items:center;justify-content:center;gap:.4em;min-height:44px;padding:.5em 1.05em;border:2px solid var(--tinta);border-radius:3px;font-family:var(--fonte-ui);font-weight:800;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background-color 150ms var(--ease-saida),color 150ms var(--ease-saida),transform 120ms var(--ease-saida);}.ds-botao:active{transform:translateY(1px) scale(.98);}.ds-botao:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}.ds-papel{padding:16px;background:var(--amarelo);}.ds-botao--tinta{background:var(--tinta);color:var(--claro);}.ds-botao--tinta:hover{background:#000;color:var(--amarelo);}"
+    },
+    {
+      "name": "Outline Button (Contorno)",
+      "kind": "button",
+      "refersTo": "button-contorno",
+      "description": "Secondary action on paper; fills with ink on hover.",
+      "html": "<div class=\"ds-papel\"><button class=\"ds-botao ds-botao--contorno\">Voltar</button></div>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-botao{display:inline-flex;align-items:center;justify-content:center;gap:.4em;min-height:44px;padding:.5em 1.05em;border:2px solid var(--tinta);border-radius:3px;font-family:var(--fonte-ui);font-weight:800;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background-color 150ms var(--ease-saida),color 150ms var(--ease-saida),transform 120ms var(--ease-saida);}.ds-botao:active{transform:translateY(1px) scale(.98);}.ds-botao:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}.ds-papel{padding:16px;background:var(--jornal);}.ds-botao--contorno{background:transparent;color:var(--tinta);}.ds-botao--contorno:hover{background:var(--tinta);color:var(--claro);}"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "campo",
+      "description": "Field-white input with ink border and uppercase label, on a paper sheet.",
+      "html": "<div class=\"ds-papel\"><label class=\"ds-campo\"><span>CEP</span><input placeholder=\"00000-000\"></label></div>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-papel{padding:16px;background:var(--jornal);color:var(--tinta);font-family:var(--fonte-ui);}.ds-campo{display:grid;gap:.3rem;}.ds-campo span{font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;}.ds-campo input{min-height:44px;padding:.5rem .75rem;border:2px solid var(--tinta);border-radius:2px;background:#fffdf7;color:var(--tinta);font:inherit;}.ds-campo input::placeholder{color:#6c6153;}.ds-campo input:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}"
+    },
+    {
+      "name": "Option Tag",
+      "kind": "chip",
+      "refersTo": "opcao-tag",
+      "description": "Square variant chip; selected inverts to ink.",
+      "html": "<div class=\"ds-papel\"><button class=\"ds-tag\">Solteiro</button><button class=\"ds-tag\" aria-pressed=\"true\">Família <small>+ R$ 30,00</small></button></div>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-papel{display:flex;gap:.5rem;padding:16px;background:var(--jornal);font-family:var(--fonte-ui);}.ds-tag{min-height:44px;padding:.4rem .95rem;border:2px solid var(--tinta);border-radius:0;background:#fffdf7;color:var(--tinta);font:inherit;font-weight:700;cursor:pointer;transition:background-color 150ms var(--ease-saida),color 150ms var(--ease-saida);}.ds-tag small{font-weight:500;}.ds-tag[aria-pressed=true]{background:var(--tinta);color:var(--claro);}.ds-tag:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}"
+    },
+    {
+      "name": "Letreiro (header)",
+      "kind": "nav",
+      "refersTo": "letreiro",
+      "description": "Night-tarp stall sign: wood-type brand, bold links with underline state, yellow bag with red counter.",
+      "html": "<header class=\"ds-letreiro\"><a class=\"ds-marca\" href=\"#\"><span>Armazém</span> <span class=\"ds-marca-2\">Ficção</span></a><nav class=\"ds-nav\"><a href=\"#\" class=\"ds-ativo\">Folhetos</a><a href=\"#\">Entrar</a><a href=\"#\" class=\"ds-sacola\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 10a4 4 0 0 1-8 0\"/><path d=\"M3.103 6.034h17.794\"/><path d=\"M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z\"/></svg>Sacola<span class=\"ds-contador\">2</span></a></nav></header>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-letreiro{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.5rem;padding:.65rem 1.5rem;background:var(--lona-funda);border-bottom:4px solid var(--tinta);color:var(--claro);font-family:var(--fonte-ui);}.ds-marca{font-family:var(--fonte-madeira);font-size:1.6rem;line-height:1;color:var(--amarelo);text-decoration:none;}.ds-marca-2{color:var(--claro);}.ds-nav{display:flex;align-items:center;gap:.25rem 1.25rem;font-weight:700;}.ds-nav>a:not(.ds-sacola){display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;border-bottom:3px solid transparent;transition:border-color 150ms var(--ease-saida);}.ds-nav>a:not(.ds-sacola):hover{border-color:var(--claro-suave);}.ds-nav>a.ds-ativo{border-color:var(--amarelo);}.ds-nav a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px;}.ds-sacola{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.3rem .5rem .3rem .85rem;border-radius:3px;background:var(--amarelo);color:var(--tinta);text-decoration:none;font-weight:800;}.ds-sacola:hover{background:#ffe174;}.ds-sacola:focus-visible{outline-color:var(--claro);}.ds-contador{display:grid;place-items:center;min-width:1.75rem;height:1.75rem;padding:0 .35rem;border-radius:999px;background:var(--carimbo);color:#fff;font-variant-numeric:tabular-nums;font-size:.95rem;}"
+    },
+    {
+      "name": "Folheto",
+      "kind": "card",
+      "refersTo": "folheto",
+      "description": "Signature product card: a cordel booklet pegged to the string, woodcut cover, serial stamp, price and Comprar.",
+      "html": "<div class=\"ds-lona\"><svg class=\"ds-barbante\" viewBox=\"0 0 1000 40\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path d=\"M-10 6 Q500 62 1010 6\"/></svg><article class=\"ds-folheto\"><span class=\"ds-pregador\"></span><span class=\"ds-serie\">Nº 003</span><svg class=\"ds-gravura\" viewBox=\"0 0 160 140\" aria-hidden=\"true\"><rect width=\"160\" height=\"140\" fill=\"var(--verde)\"/><path d=\"M52 62h48v40a10 10 0 0 1-10 10H62a10 10 0 0 1-10-10z\" fill=\"var(--tinta)\"/><path d=\"M100 72a12 12 0 0 1 0 24\" stroke=\"var(--tinta)\" stroke-width=\"7\" fill=\"none\"/><path d=\"M66 30q-6 8 0 16t0 16M80 26q-6 8 0 16t0 16M94 30q-6 8 0 16t0 16\" stroke=\"var(--tinta)\" stroke-width=\"3.4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M0 120Q30 115 62 120T120 118T160 120V140H0Z\" fill=\"var(--tinta)\"/><path d=\"M12 127l9-2M58 131l9-2M104 127l9-2\" stroke=\"var(--verde)\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg><h3 class=\"ds-titulo\">Caneca de esfriar na hora certa</h3><span class=\"ds-autor\">por Ateliê Borra Fina</span><div class=\"ds-pe\"><span class=\"ds-preco\"><small>a partir de</small>R$ 59,90</span><button class=\"ds-comprar\">Comprar</button></div></article></div>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-lona{position:relative;padding:34px 24px 28px;background-color:var(--lona);background-image:repeating-linear-gradient(0deg,rgb(255 255 255/.035) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgb(0 0 0/.06) 0 1px,transparent 1px 5px);}.ds-barbante{position:absolute;inset:8px 0 auto;width:100%;height:40px;overflow:visible;}.ds-barbante path{fill:none;stroke:var(--barbante);stroke-width:3;vector-effect:non-scaling-stroke;filter:drop-shadow(0 3px 2px rgb(0 0 0/.35));}.ds-folheto{position:relative;display:flex;flex-direction:column;gap:.45rem;width:220px;margin:0 auto;padding:12px;background:var(--verde);color:var(--tinta);box-shadow:var(--sombra-papel);transform:rotate(-1.1deg);transform-origin:50% -18px;font-family:var(--fonte-ui);}.ds-folheto::after{content:'';position:absolute;inset:5px;border:1.5px solid rgb(23 19 15/.55);pointer-events:none;}.ds-folheto:hover{transform:rotate(1.4deg);transition:transform 900ms var(--ease-saida);}.ds-pregador{position:absolute;top:-26px;left:50%;width:14px;height:40px;margin-left:-7px;border-radius:3px 3px 2px 2px;background:linear-gradient(90deg,var(--madeira) 0 45%,var(--madeira-escura) 45% 55%,var(--madeira) 55%);box-shadow:0 3px 4px -1px rgb(0 0 0/.45);z-index:2;}.ds-serie{position:absolute;top:10px;right:12px;z-index:1;padding:0 .3rem;border:2px solid currentColor;border-radius:3px;font-weight:800;font-size:.72rem;line-height:1.35;letter-spacing:.08em;color:var(--carimbo);background:var(--verde);transform:rotate(5deg);}.ds-gravura{width:100%;height:auto;margin-top:10px;border:3px solid var(--tinta);}.ds-titulo{margin:0;font-family:var(--fonte-madeira);font-weight:400;font-size:1.02rem;line-height:1.08;text-transform:uppercase;letter-spacing:.01em;}.ds-autor{font-family:var(--fonte-folheto);font-style:italic;font-size:.9rem;color:var(--tinta-suave);}.ds-pe{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.3rem;padding-top:.55rem;border-top:2px solid var(--tinta);}.ds-preco{display:grid;font-weight:800;font-size:1.15rem;line-height:1.05;font-variant-numeric:tabular-nums;}.ds-preco small{font-weight:500;font-size:.72rem;}.ds-comprar{min-height:40px;padding:.35em .8em;border:2px solid var(--tinta);border-radius:3px;background:var(--tinta);color:var(--claro);font:inherit;font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;}.ds-comprar:hover{background:#000;color:var(--amarelo);}.ds-comprar:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}"
+    },
+    {
+      "name": "Carimbo (stamp)",
+      "kind": "custom",
+      "refersTo": "carimbo",
+      "description": "Rubber stamp on the order sheet: wood type in stamp red, multiplied into the paper.",
+      "html": "<div class=\"ds-papel\"><p class=\"ds-carimbo\">Pago</p></div>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-papel{padding:28px;background:var(--amarelo);}.ds-carimbo{display:inline-block;margin:0;font-family:var(--fonte-madeira);font-size:2rem;color:var(--carimbo);text-transform:uppercase;line-height:1;border:4px solid currentColor;border-radius:6px;padding:.35rem .8rem .45rem;mix-blend-mode:multiply;transform:rotate(-9deg);}"
+    },
+    {
+      "name": "Aviso (toast)",
+      "kind": "custom",
+      "refersTo": "aviso",
+      "description": "Yellow paper slip that drops in after an add-to-bag.",
+      "html": "<div class=\"ds-aviso\" role=\"status\"><p>Caneca de esfriar na hora certa foi para a sacola.</p><a href=\"#\">Ver sacola</a><button class=\"ds-fechar\" aria-label=\"Fechar aviso\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button></div>",
+      "css": ":host{--lona:#1f4f9a;--lona-funda:#0f2b57;--tinta:#17130f;--tinta-suave:#3a3128;--claro:#fbf6e9;--claro-suave:#d9e4f5;--amarelo:#f7d34e;--rosa:#f4a0bd;--verde:#a3dbb5;--celeste:#b2d8f0;--laranja:#f7a965;--jornal:#f1ece0;--barbante:#d8b47a;--madeira:#c4884a;--madeira-escura:#8a5a2b;--carimbo:#8f1d17;--erro:#b3261e;--fonte-madeira:'Ultra','Rockwell Extra Bold',serif;--fonte-folheto:'Alegreya',Georgia,serif;--fonte-ui:'Alegreya Sans','Segoe UI',system-ui,sans-serif;--ease-saida:cubic-bezier(0.16,1,0.3,1);--sombra-papel:0 14px 22px -12px rgb(5 14 30 / 0.55),0 3px 5px -2px rgb(5 14 30 / 0.35);}.ds-aviso{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem .5rem;max-width:360px;padding:.85rem .5rem .85rem 1rem;background:var(--amarelo);color:var(--tinta);box-shadow:0 18px 28px -14px rgb(0 0 0/.65);font-family:var(--fonte-ui);animation:ds-cai 380ms var(--ease-saida);}.ds-aviso p{margin:0;font-weight:700;}.ds-aviso a{grid-column:1;font-weight:800;color:inherit;text-decoration-thickness:2px;}.ds-fechar{grid-row:1/span 2;grid-column:2;display:grid;place-items:center;width:40px;height:40px;border:0;background:transparent;color:inherit;cursor:pointer;}.ds-aviso a:focus-visible,.ds-fechar:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;}@keyframes ds-cai{from{transform:translateY(-24px) rotate(-5deg);opacity:0;}}@media (prefers-reduced-motion:reduce){.ds-aviso{animation:none;}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Banca de Cordel",
+    "overview": "**Creative North Star: \"A Banca de Cordel\"**\n\nThe whole store is a cordel stall at a northeastern market fair. The ground is the stall's blue tarp, faintly woven; every invented product is a folheto of cordel, a small booklet printed in black ink on flat coloured paper, its cover a hand-cut woodcut, hung by a wooden clothes-peg from a straw-coloured string. Interface surfaces (the cart, the checkout, the sign-in form, the order) are more sheets of the same paper: newsprint, yellow, sky blue. Ink is the only dark; red appears only where something has been stamped.\n\nThe tone is deadpan. Huge wood-type headlines state impossible things with complete seriousness; the folheto's own voice (Alegreya, often italic) does the humour; the interface voice (Alegreya Sans, heavy, uppercase on buttons) stays plain and operational so the store's rules read as real. Density is moderate: few, large, tactile objects on the tarp, with generous blue between them. The world refuses the neutral grid of white product cards and the promotional banner.\n\nDepth is physical, not digital: paper casts a soft navy shadow on the tarp, hangs at a slight tilt, swings when touched, and drops off the string into the bag when bought.",
+    "keyCharacteristics": [
+      "Blue woven tarp ground; all content sits on flat-colour paper printed in near-black ink.",
+      "Three type voices: Ultra wood type (shout), Alegreya (the folheto's printed text), Alegreya Sans (the interface).",
+      "Square-cut paper with an inset printed rule; small, irregular tilts.",
+      "The string (barbante) is the one continuous line that links home, catalog, checkout steps and the order.",
+      "Authored woodcut SVGs with gouge marks and a roughened-ink filter; no photography.",
+      "Red is a rubber stamp: serial numbers, \"Pago\", \"Esgotado\", provenance labels, the bag counter."
+    ],
+    "rules": [
+      {
+        "name": "The Ink-On-Paper Rule",
+        "body": "Anything printed on paper uses ink text and an ink focus ring; anything on the tarp uses cream text and a yellow focus ring. A surface switches by setting `--foco` and `color`, never by inventing a third combination.",
+        "section": "colors"
+      },
+      {
+        "name": "The Same Paper Everywhere Rule",
+        "body": "A product keeps one paper colour wherever it appears (string, catalog, cart thumbnail, product cover), assigned by its id across yellow, pink, green, sky and orange in that order.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red Is A Stamp Rule",
+        "body": "Stamp red marks only what has been numbered, stamped or sealed. It is never a button, a link or a background.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Ultra for titles, Alegreya for anything the folheto itself \"says\", Alegreya Sans for anything the store needs you to operate. A button never speaks in Alegreya; a description never speaks in Ultra.",
+        "section": "typography"
+      },
+      {
+        "name": "The Wood Type Has One Weight Rule",
+        "body": "Ultra is always set at 400 and never below 1rem; hierarchy comes from size, never from faux bold or tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The String Rule",
+        "body": "The barbante is the only continuous line in the store. It appears on the home, catalog, checkout steps (each step a slip of paper pegged to it) and the order confirmation (the order sheet pegged with two pegs). Do not draw other decorative horizontal rules across the tarp.",
+        "section": "layout"
+      },
+      {
+        "name": "The Hung Paper Rule",
+        "body": "Shadows exist only because paper is lying on or hanging over the tarp. A surface that is not paper (the header aside) casts nothing.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Authored Motion Rule",
+        "body": "Buying copies the folheto, drops it 18px off the string, arcs it to the bag while rotating and shrinking (760ms, `cubic-bezier(0.5, 0, 0.3, 1)`), then the bag wobbles (420ms). Everything else is short state feedback on the shared ease-out. Product woodcuts morph between list and page with a view transition (260ms). Under reduced motion the flight is skipped (only the bag wobble remains), all animation collapses to 1ms, and the stamp and toast fade in over 200ms.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "**Do** put every piece of content on paper over the tarp: newsprint (`jornal`) for operational sheets, the five folheto colours for products and featured sheets.",
+      "**Do** keep each product on its assigned paper colour everywhere it appears.",
+      "**Do** give paper sheets the paper shadow and an inset ink rule (1.5–2px, 5–14px in), with square corners.",
+      "**Do** hang new sequences (steps, featured rows, confirmations) from the barbante with wooden pegs.",
+      "**Do** draw product imagery as woodcuts: solid ink, gouge marks in the paper colour, a ground strip, the `#xilo` roughening filter, a 3px ink frame.",
+      "**Do** use Ultra only at 400 and only for titles; Alegreya for the folheto's voice; Alegreya Sans for every control, label and price.",
+      "**Do** use tabular figures for every price, quantity and total.",
+      "**Do** keep targets at 44px minimum and switch the focus ring between ink (paper) and yellow (tarp)."
+    ],
+    "donts": [
+      "**Don't** show products as white cards with photos on a neutral background, or add promotional banners.",
+      "**Don't** round paper corners or give sheets a border radius; radius is for stamps, pegs and circles.",
+      "**Don't** use stamp red for buttons, links or backgrounds, and don't use `erro` red as a stamp.",
+      "**Don't** use hard offset shadows, glows or coloured shadows; shadows are soft and navy-black, negatively spread.",
+      "**Don't** set body text, buttons or labels in Ultra, or fake-bold it.",
+      "**Don't** add a second decorative motion on the scale of the drop-to-bag; new motion is short state feedback on `cubic-bezier(0.16, 1, 0.3, 1)` and must respect reduced motion.",
+      "**Don't** place cream text on paper or ink text directly on the tarp."
+    ]
+  }
+}
